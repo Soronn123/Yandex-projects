@@ -1,0 +1,52 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="b-example-divider">
+  <div class="py-5">
+    <div class="col-lg-6 mx-auto">
+      <h1 class="display-5 fw-bold text-white">Астрономия это интересно</h1>
+      <p class="fs-5 mb-4">Сайт является представлением об астрономии. Здесь есть пособия для заинтересованных людей в изучении космоса, открытия ученых, магазин оптических приборов, а также форум, где вы можете делиться впечатлениями.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" href="/register" role="button">Регистрация</a>
+        <a class="btn btn-outline-light btn-lg px-4" href="/login" role="button">Войти</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="dropdown-menu position-static d-flex flex-column flex-lg-row align-items-stretch justify-content-start p-3 rounded-3 shadow-lg" data-bs-theme="dark">
+    <nav class="col-lg-8">
+      <ul class="list-unstyled d-flex flex-column gap-2">
+        <li>
+          <a href="/shop" class="btn btn-hover-light rounded-2 d-flex align-items-start gap-2 py-2 px-3 lh-sm text-start">
+            <svg class="bi" width="24" height="24"><use href="/shop"/></svg>
+            <div>
+              <strong class="d-block">Main product</strong>
+              <small>Take a tour through the product</small>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/lecture" class="btn btn-hover-light rounded-2 d-flex align-items-start gap-2 py-2 px-3 lh-sm text-start">
+            <svg class="bi" width="24" height="24"><use xlink:href="#music-note-beamed"/></svg>
+            <div>
+              <strong class="d-block">Another product</strong>
+              <small>Explore this other product we offer</small>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/guest" class="btn btn-hover-light rounded-2 d-flex align-items-start gap-2 py-2 px-3 lh-sm text-start">
+            <svg class="bi" width="24" height="24"><use xlink:href="#question-circle"/></svg>
+            <div>
+              <strong class="d-block">Support</strong>
+              <small>Get help from our support crew</small>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="d-none d-lg-block vr mx-4 opacity-10">&nbsp;</div>
+    <hr class="d-lg-none">
+  </div>
+</div>
+{% endblock %}

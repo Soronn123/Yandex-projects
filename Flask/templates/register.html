@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% block content %}
+  <div class="my_sss">
+    <div class="form_sss">
+      <form action="" method="post">
+        <div class="title">Добро пожаловать!</div>
+        <div class="subtitle">Создание аккаунта</div>
+        <div class="subtitle_error"> {{ message }}</div>
+        <div class="input-container ic1">
+          <input type="text" class="form-control" id="nickname" aria-describedby="name" placeholder="Введите имя" name="nickname">
+        </div>
+        <div class="input-container ic1">
+          <input type="email" class="form-control" id="email" aria-describedby="EmailHelp" placeholder="Введите адрес почты" name="email">
+        </div>
+        <div class="input-container ic1">
+          <input type="password" class="form-control" id="password" aria-describedby="password" placeholder="Введите пароль" name="password">
+        </div>
+        <div class="input-container ic1">
+          <input id="rep_password" class="form-control" type="password" placeholder="Повторный пароль" name="rep_password">
+        </div>
+            <button type="text" class="submit">Регистрация</button>
+        <div class="input-container ic1">
+          <a class="btn btn-warning" href="/login" role="button">Войти</a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+<div class="container emp-profile">
+    <form  action="" method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+       <div class="row">
+           <div class="row">
+                <div class="col-md-4">
+                    <p>{{ form.photo.label }} </p>
+                </div>
+               <div class="col-md-4">
+                    <p>{{ form.photo() }}</p>
+                </div>
+           </div>
+           <div class="row">
+               <div class="col-md-4">
+                    <p>{{ form.type_post.label }} </p>
+                </div>
+               <div class="col-md-4">
+                    <p>{{ form.type_post() }}</p>
+                </div>
+           </div>
+           <div class="row">
+               <div class="col-md-4">
+                    <p>{{ form.title.label }} </p>
+                </div>
+               <div class="col-md-4">
+                    <p>{{ form.title() }}</p>
+                </div>
+           </div>
+           <div class="row">
+               <div class="col-md-4">
+                    <p>{{ form.crat_content.label }} </p>
+                </div>
+               <div class="col-md-4">
+                    <p>{{ form.crat_content() }}</p>
+                </div>
+           </div>
+           <div class="row">
+               <div class="col-md-4">
+                    <p>{{ form.content.label }} </p>
+                </div>
+               <div class="col-md-5">
+                    <p>{{ form.content() }}</p>
+                </div>
+           </div>
+           <p>{{ form.submit(type="submit", class="btn btn-primary") }}
+                        <a class="btn btn-primary" href="/lecture" role="button">Back</a></p>
+           <div class="subtitle_error"> {{ message }}</div>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1>{{ main_title }}</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <div class="row">
+        <h4 >{{ form.title.label }}</h4>
+        <div class="col">
+        {{ form.title(class="form-control") }}
+        </div>
+    </div>
+    <div class="row">
+        <h4 >{{ form.content.label }}</h4>
+        <div class="col">
+        {{ form.content(class="form-control") }}
+        </div>
+    </div>
+    <p></p>
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    {{message}}
+</form>
+
+{% endblock %}

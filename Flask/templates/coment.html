@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% block content %}
+<h1 align="center" style="color:#FFFFFF; margin: 25px;">{{ title }}</h1>
+<form action="" method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    {{ form.csrf_token }}
+    <div style="background: rgba(255, 255, 255, 0.774); width:50%; margin-left: 25px">
+    <h3 style="margin-left: 25px">{{ post.created_date }}</h3>
+    <div style="display: inline-flex;">
+        <h3>{{ post.type }}</h3>
+    </div>
+    <h2 style="word-wrap:break-word;margin-left: 25px">{{ post.title.capitalize() }}</h2>
+    <img src="../static/img/post/{{ post.photo }}" height="450" width="650" hspace="25">
+    <h5 style="word-wrap:break-word;margin-left: 25px">{{ post.content }}</h5>
+    <img src="../static/img/Ava/{{ post.user.avatar }}" class="round" height="75" width="75" style="margin-left: 25px">
+    <h3 style="margin-left: 25px">Автор: {{ post.user.nickname }}</h3>
+    </div>
+    <p style="color:#FFFFFF; margin-left: 25px; width: 50%">
+        {{ form.text.label }}<br>
+        {{ form.text(class="form-control") }}<br>
+        {% for error in form.text.errors %}
+    <p class="alert alert-danger" role="alert" style="margin-left: 25px">
+        {{ error }}
+    </p>
+    {% endfor %}
+    <p style="margin-left: 25px">{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    {{message}}
+</form>
+{% endblock %}

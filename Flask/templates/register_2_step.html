@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+{% block content %}
+  <div class="my_sss">
+    <div class="form_sss">
+      <form action="" method="post">
+        <div class="title">{{ title }}</div>
+        <div class="subtitle">{{ subtitle }}</div>
+        <div class="subtitle_error"> {{ message }}</div>
+        <div class="input-container ic1">
+          <input type="text" class="form-control" id="code_for_email" aria-describedby="name" placeholder="Введите код" name="code_for_email">
+        </div>
+            <button type="text" class="submit">Подтвердить</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

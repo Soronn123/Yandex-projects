@@ -1,0 +1,75 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1 align="center" style="color:#FFFFFF; margin:25px;">{{ title }}</h1>
+<div class="container emp-profile">
+    <form  action="" method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+       <div class="row">
+           <div class="profile-head">
+               <ul class="dws-ul">
+               <div class="col-md-2">
+                   <a href="/">
+                        <a class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" href="/guest" role="button">Back</a>
+                   </a>
+                </div>
+                <div class="col-md-2">
+                    <a class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" href="/delete_user" role="button">Delete acc</a>
+                </div>
+               </ul>
+           </div>
+           <div class="row">
+                <div class="col-md-4">
+                    <p>{{ form.avatar.label }} </p>
+                </div>
+               <div class="col-md-4">
+                    <p>{{ form.avatar() }}</p>
+                </div>
+           </div>
+           <div class="row">
+               <div class="col-md-4">
+                    <p>{{ form.email.label }} </p>
+                </div>
+               <div class="col-md-4">
+                    <p>{{ form.email(disabled=True) }}</p>
+                </div>
+           </div>
+           <div class="row">
+               <div class="col-md-4">
+                    <p>{{ form.nickname.label }} </p>
+                </div>
+               <div class="col-md-4">
+                    <p>{{ form.nickname() }}</p>
+                </div>
+           </div>
+           <div class="row">
+               <div class="col-md-4">
+                    <p>{{ form.role.label }} </p>
+                </div>
+               <div class="col-md-4">
+                    <p>{{ form.role() }}</p>
+                </div>
+           </div>
+           <div class="row">
+               <div class="col-md-4">
+                    <p>{{ form.new_password.label }} </p>
+                </div>
+               <div class="col-md-4">
+                    <p>{{ form.new_password() }}</p>
+                </div>
+           </div>
+           <div class="row">
+               <div class="col-md-4">
+                    <p>{{ form.old_password.label }} </p>
+                </div>
+               <div class="col-md-4">
+                    <p>{{ form.old_password() }}</p>
+                </div>
+           </div>
+           <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+           <div class="subtitle_error"> {{ message }}</div>
+        </div>
+    </form>
+</div>
+{% endblock %}
